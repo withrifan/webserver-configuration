@@ -1,5 +1,6 @@
 # Install NGINX Ubuntu/Debian
 sudo apt update
+
 sudo apt install nginx
 
 ## NGINX Reverse Proxy
