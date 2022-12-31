@@ -16,7 +16,7 @@
     try_files $uri $uri/ =404;
 
 ## Limit Request
-(10req/mnt or 1req/6s)
+10req/mnt or 1req/6s
 
     limit_req_zone $binary_remote_addr zone=one:10m rate=10r/m;
     
