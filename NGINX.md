@@ -1,6 +1,6 @@
 # Install NGINX Ubuntu/Debian
-* sudo apt update
-* sudo apt install nginx
+    sudo apt update
+    sudo apt install nginx
 
 ## NGINX Reverse Proxy
     location / {
@@ -11,22 +11,24 @@
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
        }
+
 ### Delete script 
-try_files $uri $uri/ =404;
+    try_files $uri $uri/ =404;
 
 ## Limit Request per menit (10req/mnt or 1req/6s)
-limit_req_zone $binary_remote_addr zone=one:10m rate=10r/m;
-in blok location / {
-    limit_req zone=one;
-}
+    limit_req_zone $binary_remote_addr zone=one:10m rate=10r/m;
+    location / {
+        limit_req zone=one;
+    }
 
 ## Restart NGINX
-sudo systemctl restart nginx
-sudo service nginx restart
-sudo /etc/init.d/nginx restart
+    sudo systemctl restart nginx
+    sudo service nginx restart
+    sudo /etc/init.d/nginx restart
 
 ## Opsional
 Install Node with nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-exit
-node --version
+
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+    exit
+    node --version
