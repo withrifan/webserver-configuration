@@ -17,6 +17,7 @@
 
 ## Limit Request per menit (10req/mnt or 1req/6s)
     limit_req_zone $binary_remote_addr zone=one:10m rate=10r/m;
+    
     location / {
         limit_req zone=one;
     }
@@ -26,7 +27,7 @@
     sudo service nginx restart
     sudo /etc/init.d/nginx restart
 
-## Opsional
+### Opsional
 Install Node with nvm
 
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
