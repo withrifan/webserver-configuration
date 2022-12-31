@@ -3,15 +3,14 @@
 * sudo apt install nginx
 
 ## NGINX Reverse Proxy
-location / {
-
-    proxy_pass http://localhost:8000;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection 'upgrade';
-    proxy_set_header Host $host;
-    proxy_cache_bypass $http_upgrade;
-    }
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+       }
 ### Delete script 
 try_files $uri $uri/ =404;
 
