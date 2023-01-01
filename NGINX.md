@@ -1,8 +1,11 @@
-# Install NGINX Ubuntu/Debian
-    sudo apt update
+# NGINX Web Server
+Install NGINX in Ubuntu
+
     sudo apt install nginx
 
 ## NGINX Reverse Proxy
+Edit sites-available
+
     location / {
         proxy_pass http://localhost:8000;
         proxy_http_version 1.1;
@@ -12,7 +15,8 @@
         proxy_cache_bypass $http_upgrade;
        }
 
-### Delete script 
+Delete script 
+
     try_files $uri $uri/ =404;
 
 ## Limit Request
